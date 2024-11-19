@@ -1,0 +1,13 @@
+file            ::= stmt alphabet  transition end_line
+stmt            ::= "States: " state (" " state)* "\n"
+alphabet        ::= "Alphabet: " symbol (" " symbol)* "\n"
+transition      ::= "Transition:\n" transition ("\n" transition)* "\n"
+end_line        ::= "Final States: :" state "\n"
+
+state           ::= "q1" | "q2" | "q3" | "q4"
+symbol          ::= ident
+transition      ::= state "->" symbol "->" state
+
+identifier      ::= letter (letter | digit)*
+letter          ::= "a" | "b"
+digit           ::= "0" |"1"
